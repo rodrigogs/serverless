@@ -46,7 +46,7 @@ const uninstallPlugin = async ({ serviceDir, pluginName }) => {
 
 const removePluginFromServerlessFile = async ({ configurationFilePath, pluginName }) => {
   const fileExtension = path.extname(configurationFilePath);
-  if (fileExtension === '.js' || fileExtension === '.ts') {
+  if (fileExtension === '.js' || fileExtension === '.ts' || fileExtension === '.mjs') {
     requestManualUpdate(configurationFilePath);
     return;
   }

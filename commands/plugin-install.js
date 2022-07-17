@@ -59,7 +59,7 @@ const installPlugin = async ({ serviceDir, pluginName, pluginVersion }) => {
 
 const addPluginToServerlessFile = async ({ configurationFilePath, pluginName }) => {
   const fileExtension = path.extname(configurationFilePath);
-  if (fileExtension === '.js' || fileExtension === '.ts') {
+  if (fileExtension === '.js' || fileExtension === '.ts' || fileExtension === '.mjs') {
     requestManualUpdate(configurationFilePath);
     return;
   }
